@@ -1,0 +1,21 @@
+apply plugin: 'com.android.test'
+
+android {
+  compileSdkVersion rootProject.ext.compileSdkVersion
+  buildToolsVersion rootProject.ext.buildToolsVersion
+
+  defaultConfig {
+    minSdkVersion rootProject.ext.minSdkVersion
+    targetSdkVersion rootProject.ext.targetSdkVersion
+
+    testApplicationId 'com.kirillzh.androidtestmodule.tests'
+    testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+  }
+
+  targetProjectPath ':app'
+  targetVariant 'debug'
+}
+
+dependencies {
+  compile "com.android.support.test.espresso:espresso-core:${rootProject.ext.espressoVersion}"
+}
